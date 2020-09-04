@@ -523,13 +523,10 @@ gen impl_blade = 0 if implant_supplies != ""
 replace impl_blade = 1 if strpos(implant_suppliesV2, " blade ")
 label var impl_blade "Does this facility have these supplies needed to insert and/or  : Surgical Blade"
 
-gen impl_mosquitoforceps = 0 if implant_supplies != ""
-replace impl_mosquitoforceps = 1 if strpos(implant_suppliesV2, " mosquito_forceps ")
-label var impl_mosquitoforceps "Does this facility have these supplies n : Mosquito forceps (straight or curved)"
 
 * Clean up: reorder binary variables, label binary variables, drop padded variable
-order impl_cleangloves-impl_mosquitoforceps, after(implant_supplies)
-label values impl_cleangloves-impl_mosquitoforceps o2s_binary_label
+order impl_cleangloves-impl_blade, after(implant_supplies)
+label values impl_cleangloves-impl_blade o2s_binary_label
 drop implant_suppliesV2
 
 ***** Begin split of "IUD_supplies"
@@ -1007,7 +1004,6 @@ cap rename impl_blade  implant_blade
 cap rename impl_cleangloves implant_gloves
 cap rename impl_sealedimplantpack implant_sealed_pack 
 cap rename impl_sterilegauzepadorcottonwool implant_sterile_gauze 
-cap rename impl_mosquitoforceps implant_forceps
 rename IUD_supplie_spongeholdingforceps iud_forceps
 rename IUD_supplie_speculums iud_speculums
 rename IUD_supplie_tenaculum iud_tenaculum
