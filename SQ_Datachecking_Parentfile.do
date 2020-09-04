@@ -23,17 +23,17 @@ set maxvar 30000
 *BEFORE USE THE FOLLOWING NEED TO BE UPDATED:
 *Country/Round/Abbreviations
 global Country KE	 
-global Phase Phase1
+global Phase Phase2
 global phase 1
-global CCPX KEP1
+global CCPX KEP2
 
 *Year of the Survey
-local SurveyYear 2019 
-local SYShort 19 
+local SurveyYear 2020 
+local SYShort 20
 
 ******CSV FILE NAMES ****
 *SDP CSV File name 
-global SQcsv "KEP1_SDP_Questionnaire_v6"
+global SQcsv "KEP2_SDP_Questionnaire_v6"
 
 
 ***If the REs used a second version of the form, update these 
